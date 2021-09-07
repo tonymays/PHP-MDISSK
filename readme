@@ -1,0 +1,64 @@
+=======================================================================================================================
+Use the following instructions to setup a new MDI Site
+=======================================================================================================================
+1. Make a directory that will represent your site in /var/www/html ... I will refer to this as YOURSITE
+2. Copy /var/www/html/mdissk contents (including .htacess) into YOURSITE directory
+    Make sure to get the . files (ie: .htaccess)
+3. Open the /var/www/html/YOURSITE/.htacess file and make the following changes:
+    Change: RewriteBase /mdissk/
+    To: RewriteBase /YOURSITE/
+4. Open the /var/www/html/YOURSITE/index.php file and make the following changes:
+    Change: define('SITE_SESSION_NAME', 'mdissk');
+    To: define('SITE_SESSION_NAME', 'YOURSITE');
+5. Open the /var/www/html/YOURSITE/assets/scripts/core/ajax.js file and replace the following:
+    Replace all instances of mdissk with YOURSITE
+6. Open the /var/www/html/YOURSITE/assets/scripts/core/core.js file and replace the following:
+    Replace all instances of mdissk with YOURSITE
+7. Open the /var/www/html/YOURSITE/assets/scripts/core_features/audit.js file and replace the following:
+    Replace all instances of mdissk with YOURSITE
+8. Open the /var/www/html/YOURSITE/assets/scripts/core_features/change_password.js file and replace the following:
+    Replace all instances of mdissk with YOURSITE
+9. Open the /var/www/html/YOURSITE/assets/scripts/core_features/permissions.js file and replace the following:
+    Replace all instances of mdissk with YOURSITE
+10. Open the /var/www/html/YOURSITE/assets/scripts/core_features/role_users.js file and replace the following:
+    Replace all instances of mdissk with YOURSITE
+11. Open the /var/www/html/YOURSITE/assets/scripts/core_features/roles.js file and replace the following:
+    Replace all instances of mdissk with YOURSITE
+12. Open the /var/www/html/YOURSITE/assets/scripts/core_features/users.js file and replace the following:
+    Replace all instances of mdissk with YOURSITE
+13. Open the /var/www/html/YOURSITE/db.001.sql and find the following segment in the file:
+    drop user 'mdissk'@'localhost';
+    create user 'mdissk'@'localhost' identified by 'mdissk';
+    grant all privileges on mdissk.* to 'mdissk'@'localhost';
+    Replace mdissk with your SITENAME information.
+    Change the password to whatever may like for your site
+14. Open the /var/www/html/YOURSITE/assets/libs/defines.php and do the following:
+    CHANGE:
+    -----------------------------------------------------------------------------
+    define('SITE_DB_NAME', 'mdissk');
+    define('SITE_DB_USER_NAME', 'mdissk');
+    define('SITE_DB_PASSWORD', 'mdissk');
+    TO:
+    -----------------------------------------------------------------------------
+    define('SITE_DB_NAME', 'YOUR-SITE-DATABASE-NAME');
+    define('SITE_DB_USER_NAME', 'YOUR-SITE-USER-NAME');
+    define('SITE_DB_PASSWORD', 'YOUR-SITE-USER-NAME-PASSWORD');
+15. In the /var/www/html/YOURSITE/assets/libs/defines.php and do the following to configure ldap:
+    Change the following to match your LDAP AD Server:
+    define('SITE_LDAP_PROTOCOL', 'ldap://');
+    define('SITE_PRIMARY_LDAP_SERVER', '192.168.211.16');
+    define('SITE_BACKUP_LDAP_SERVER', '192.168.211.17');
+    define('SITE_LDAP_PORT', 389);
+    define('SITE_LDAP_USER_DOMAIN', '@edgecommunications.com');
+
+    AND change NO to YES to activate ldap usage
+    define('SITE_USE_LDAP', 'NO');
+16. Open a command line session to mysql.
+17. Create the a database with the name of YOURSITE in the following:
+    create database YOURSITE;
+18. The enter the mysql use command in the following:
+    use YOURSITE;
+19. Then load the /var/www/html/YOURSITE/db.001.sql script into that database:
+    source /var/www/html/YOURSITE/db.001.sql;
+20. Now as Jake would say ... TEST! TEST! TEST!
+21. Enjoy your new world!

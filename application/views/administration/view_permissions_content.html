@@ -1,0 +1,30 @@
+{messages}
+<div class="section_header_spacer">
+    <h3 class="section_header">Permissions for Role: {role}</h3>
+</div>
+{rows}
+<div class="permissions_content_table">
+    <h4 class="subsection_header">{module} Module</h4>
+    <table class="permissions_table">
+        <thead>
+        <tr>
+            <th class="large_width">Submodule</th>
+            <th class="xxx_large_width">Description</th>
+            <th class="large_width">Permission Type</th>
+            <th class="medium_width">Permit</th>
+        </tr>
+        </thead>
+        <tbody>
+        {submodules}
+        <tr>
+            <td>{submodule}</td>
+            <td>{description}</td>
+            <td>{permission_type}</td>
+            <td>{permit}</td>
+        </tr>
+        {/submodules}
+        </tbody>
+    </table>
+</div>
+<br>
+{/rows}

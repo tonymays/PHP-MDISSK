@@ -1,0 +1,29 @@
+<script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/reports/role_users.js';?>"></script>
+<script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/administration/users.js';?>"></script>
+<script type = "text/javascript">
+    RoleUsersObj = new JRoleUsers(Ajax);
+    UsersObj = new JUsers(Ajax,Core,'');
+</script>
+{toolbar}
+<section name="role_users_section" class="section clearfix">
+    <form id="role_users_form">
+        <div class="section_content_header get_h">
+            <h2><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/user.png';?>" class="section_img">Role Users</h2>
+        </div>
+        <div class="section_header_spacer get_h">
+            <h3 class="section_header">Role Selection</h3>
+        </div>
+        <div class="get_h">
+            <h5>*Select the role you wish to view or modify from the Roles Drop Down</h5>
+            <label class="x_small_width">Roles</label>{roles}<br>
+            <br>
+        </div>
+        <div name="role_users_content" class="role_users_content">
+            {content}
+        </div>
+    </form>
+</section>
+<script type = "text/javascript">
+    RoleUsersObj.initialize();
+    UsersObj.initialize();
+</script>

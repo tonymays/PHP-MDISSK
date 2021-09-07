@@ -1,0 +1,361 @@
+/*
+ * this file is used to configure styles for specific forms and the windows that those forms will reside within
+ * this styles can be adjusted to meet your needs.
+ * Please note: that css classes are stored within the database for each form that will create a window
+ */
+
+/* =============================================== section handlers =================================================*/
+.section
+{
+    margin: 6px 0 0 8px;
+}
+
+.section_content_header
+{
+    width: auto;
+    padding-right: 8px;
+}
+
+.section_img
+{
+    height: 18px;
+    width: 18px;
+    margin: 0 4px 0 2px;
+}
+
+/* ========================================== select action type handlers ==========================================*/
+.option_actions
+{
+    width: 144px;
+    font-size: 12px;
+}
+
+/* =========================================== individual form  handlers ============================================*/
+
+/* ----- roles -----*/
+.roles_window
+{
+    left: 0;
+    top: 0;
+    width: 550px;
+    height: 610px;
+    min-width: 550px;
+    min-height: 610px;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.roles_content_table
+{
+    width: auto;
+    height: auto;
+    overflow: auto;
+    max-height: 470px;
+    padding-right: 8px;
+}
+
+.roles_table
+{
+    width: 100%;
+    overflow: auto;
+    max-height: 450px;
+}
+
+.add_roles_window
+{
+    left: 0;
+    top: 0;
+    width: 400px;
+    height: 250px;
+    min-width: 400px;
+    min-height: 250px;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.edit_roles_window
+{
+    left: 0;
+    top: 0;
+    width: 400px;
+    height: 250px;
+    min-width: 400px;
+    min-height: 250px;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* ----- users ------*/
+.users_window
+{
+    left: 0;
+    top: 0;
+    width: 950px;
+    height: 610px;
+    min-width: 950px;
+    min-height: 610px;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.users_content_table
+{
+    width: auto;
+    height: auto;
+    overflow: auto;
+    max-height: 470px;
+    padding-right: 8px;
+}
+
+.users_table
+{
+    width: 100%;
+    overflow: auto;
+    max-height: 450px;
+}
+
+.add_users_window
+{
+    left: 0;
+    top: 0;
+    width: 470px;
+    height: 610px;
+    min-width: 470px;
+    min-height: 610px;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.add_user_content
+{
+    width: 100%;
+    overflow: auto;
+    max-height: 550px;
+}
+
+.edit_users_window
+{
+    left: 0;
+    top: 0;
+    width: 470px;
+    height: 610px;
+    min-width: 470px;
+    min-height: 610px;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.edit_user_content
+{
+    width: 100%;
+    overflow: auto;
+    max-height: 520px;
+}
+
+/* ----- permissions ------*/
+.permissions_window
+{
+    left: 0;
+    top: 0;
+    width: 950px;
+    height: 650px;
+    min-width: 950px;
+    min-height: 650px;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.permissions_content
+{
+    width: 100%;
+    overflow: auto;
+    max-height: 450px;
+}
+
+.permissions_content_table
+{
+    width: auto;
+    padding-right: 8px;
+}
+
+.permissions_table
+{
+    width: 100%;
+    max-height: 450px;
+}
+
+.permissions_roles_drop_down
+{
+    margin-left: 6px;
+    width: 240px;
+}
+
+/* ----- change_password ------*/
+.change_password_window
+{
+    left: 0;
+    top: 0;
+    width: 450px;
+    height: 300px;
+    min-width: 450px;
+    min-height: 300px;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* ----- role_users ------*/
+.role_users_window
+{
+    left: 0;
+    top: 0;
+    width: 650px;
+    height: 650px;
+    min-width: 650px;
+    min-height: 650px;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.role_users_content
+{
+    width: 100%;
+    overflow: auto;
+    max-height: 450px;
+}
+
+.role_users_content_table
+{
+    width: auto;
+    height: auto;
+    overflow: auto;
+    max-height: 450px;
+    padding-right: 8px;
+}
+
+.role_users_table
+{
+    width: 100%;
+    overflow: auto;
+    max-height: 450px;
+}
+
+.role_users_roles_drop_down
+{
+    margin-left: 6px;
+    width: 240px;
+}
+
+/* ----- audit log ------*/
+.audit_log_window
+{
+    left: 0;
+    top: 0;
+    width: 650px;
+    height: 750px;
+    min-width: 650px;
+    min-height: 750px;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.audit_log_content
+{
+    width: 100%;
+    overflow: auto;
+    max-height: 450px;
+}
+
+.audit_log_content_table
+{
+    width: auto;
+    height: auto;
+    overflow: auto;
+    max-height: 450px;
+    padding-right: 8px;
+}
+
+.audit_log_drop_downs
+{
+    width: 300px;
+}
+
+.audit_log_table
+{
+    width: 100%;
+    overflow: auto;
+    max-height: 450px;
+}
+
+.audit_log_diff_window
+{
+    left: 0;
+    top: 0;
+    width: 850px;
+    height: 600px;
+    min-width: 850px;
+    min-height: 600px;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.audit_log_diff_parent_pane
+{
+    float: left;
+    width: 49%;
+    padding-right: 7px;
+}
+
+.audit_log_diff_pane
+{
+    overflow: auto;
+    height: auto;
+    max-height: 466px;
+    border: 1px solid gray;
+}
+
+.audit_log_diff_title_bar
+{
+    border-bottom: 1px solid lightgrey;
+    background-color: #995300;
+    height: 23px;
+    width: auto;
+    font-size: 16px;
+    font-style: normal;
+    color: whitesmoke;
+    padding: 2px 0px 0px 4px;
+    text-shadow: 1px 1px 2px black;
+    font-weight: bold;
+}

@@ -1,0 +1,18 @@
+<script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/administration/users.js';?>"></script>
+<script type = "text/javascript">
+    UsersObj = new JUsers(Ajax, Core, 'users_form');
+</script>
+{toolbar}
+<section name="users_section" class="section clearfix">
+    <form id="users_form">
+        <div class="section_content_header get_h">
+            <h2><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/user.png';?>" class="section_img">Users</h2>
+        </div>
+        <div name="users_content" class="audit_page copy_mirror">
+            {content}
+        </div>
+    </form>
+</section>
+<script type = "text/javascript">
+    UsersObj.initialize();
+</script>

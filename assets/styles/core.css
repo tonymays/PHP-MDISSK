@@ -1,0 +1,910 @@
+/*
+ * this file is used for core site styles
+ */
+
+/* ------------ marker classes - these are empty and used for selector purposes DO NOT REMOVE or CHANGE ------------ */
+/*
+ * get_h is a marker class used by the Core during resize and maximize events.  This class tells the Core window
+ * manager that you wish to use the DIV (and div only) that contains this class to be considered when gathering height
+ * measurements for recalculating divs that contain the set_h class.   This became necessary because the outer window
+ * has its overflow attribute set to hidden which causes max height attributes not to be recognized unless set
+ * statically. Auto and 100% on max-heights do not work.  So it became necessary to find a jquery method within the
+ * core to handle this limitation.
+ */
+.get_h{}
+
+/*
+ * set_h is a marker class used by the Core during resize and maximize events.  This class tells the Core window
+ * manager that you wish a DIV (and div only) that contains this class to be re-sized accordingly based on the
+ * the total window size minus the total height of div containing get_h minus 32 (under determined at this why 32).
+ */
+.set_h{}
+
+/*
+ * place this tag on the div that you want to audit the page ... set your divs up so that there is only one per page
+ */
+.audit_page{}
+
+/*
+ * place this tag on the div that you want to the audit mirror to receive posted data after a post to the server ...
+ *  set your divs up so that there is only one per page.  This is good for edit like windows.
+ */
+.copy_audit_mirror{}
+
+/*
+ * The get_w, get_sibling_w and set_w class are selector classes used by the Core to determine width sizing on windows
+ * that contain float left like div (set audit log diff for example) and are used to resize the right most div during
+ * resize operations
+ */
+.get_w
+{
+}
+
+.get_sibling_w
+{
+}
+.set_w
+{
+}
+
+/*
+ * date picker class
+ */
+.ui-datepicker-trigger
+{
+    padding-top: 4px;
+    height: 18px;
+    width: 18px;
+}
+
+.input_info
+{
+    font-size: 10px;
+    color: #404040;
+    padding: 0px 0px 0px 4px;
+    text-shadow: 1px 1px 2px grey;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* --------------------------------- default layouts for specified elements ---------------------------------------- */
+*
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+*:focus
+{
+    outline: 0;
+}
+
+html, body, ul, li, h2, h3, h4, h5, div
+{
+    border: 0;
+}
+
+body
+{
+    font-family: Arial;
+    height: 100%;
+    width: 100%;
+    background-color: #f8f8f8;
+    min-width: 800px;
+}
+
+h2
+{
+    font-size: 22px;
+    color: black;
+    text-shadow: 1px 1px 2px darkgray;
+    border-bottom: 3px double #888888;
+    margin: 0px 0px 6px 0px;
+}
+
+h4
+{
+    font-size: 14px;
+    color: #404040;
+    margin: 0px 0px 4px 0px;
+    text-shadow: 1px 1px 2px grey;
+}
+
+h5
+{
+    font-size: 10px;
+    color: #404040;
+    padding: 0px 0px 4px 0px;
+    text-shadow: 1px 1px 2px grey;
+    font-style: italic;
+}
+
+label
+{
+    font-size: 14px;
+    color: DarkSlateGray;
+    display: inline-block;
+    width: 144px;
+}
+
+button
+{
+    font-size: 10px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    background-color: #CDAA7D;
+    height: 26px;
+    width: 110px;
+    border: 2px groove #e78f08;
+    border-radius: 5px;
+    text-align: center;
+    margin: 2px 0px 0px 2px;
+}
+
+button:hover
+{
+    cursor:pointer;
+    background-color: Sienna;
+}
+
+button img
+{
+    width: 12px;
+    height: 12px;
+    right: 6px;
+    top: 2px;
+}
+
+table
+{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    border-collapse: collapse;
+}
+
+table input
+{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+td, th
+{
+    /* FF bug fix for background color and border */
+    background-clip: padding-box;
+}
+
+th
+{
+    padding: 4px 0em 4px 8px;
+    background-color:#E7C6A5;
+    border-style: solid;
+    border-width: 4px 0px 2px 0px;
+    border-color: #F4A460;
+    font-size: 14px;
+    text-align: left;
+}
+
+td
+{
+    padding: 4px 0em 4px 8px;
+    height: 18px;
+}
+
+tr
+{
+    font-size: 12px;
+}
+
+tr:nth-child(odd)
+{
+    background-color:#EEDFCC;
+}
+
+tbody tr:last-child
+{
+    border-bottom: 1px solid #F4A460;
+}
+
+.toolbar
+{
+    height: 30px;
+    width: 100%;
+    background-color:#c8c8c8;
+    border-bottom: 1px outset darkgrey;
+}
+
+/* -------------------------------------- class for handling repeatable styling ------------------------------------ */
+.claerfix
+{
+    clear: both;
+}
+
+.clearfix:after
+{
+    display: block;
+    visibility: hidden;
+    line-height: 0;
+    content: ".";
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+.hide
+{
+    display: none;
+}
+
+.readonly
+{
+
+}
+
+.text_center
+{
+    text-align: center;
+}
+
+.center
+{
+    margin: 0 auto;
+}
+
+.required
+{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.required::before
+{
+    content: "*";
+}
+
+.info_spacer_div
+{
+    width: auto;
+    padding-right: 8px;
+}
+
+.section_header
+{
+    font-size: 16px;
+    color: #404040;
+    margin: 0px 0px 8px 0px;
+    text-shadow: 1px 1px 2px grey;
+    font-style: italic;
+    border-bottom: 2px outset darkgray;
+}
+
+.subsection_header
+{
+    font-size: 14px;
+    color: #404040;
+    margin: 0px 0px 4px 0px;
+    text-shadow: 1px 1px 2px grey;
+}
+
+.section_header_spacer
+{
+    width: auto;
+    padding-right: 8px;
+}
+
+.info_spacer
+{
+    margin-top: 8px;
+    border-top: 1px solid darkgrey;
+}
+
+.x_small_width
+{
+    width: 40px;
+}
+
+.small_width
+{
+    width: 80px;
+}
+
+.medium_width
+{
+    width: 150px;
+}
+
+.large_width
+{
+    width: 300px;
+}
+
+.x_large_width
+{
+    width: 450px;
+}
+
+.xx_large_width
+{
+    width: 600px;
+}
+
+.xxx_large_width
+{
+    width: 750px;
+}
+
+.x4_large_width
+{
+    width: 900px;
+}
+
+.x5_large_width
+{
+    width: 1050px;
+}
+
+.x6_large_width
+{
+    width: 1200px;
+}
+
+/* ---------------------------------- background.php (header and footer) ------------------------------------------- */
+header
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color:#708090;
+    border-bottom: 2px outset darkgrey;
+    z-index: 10000;
+    min-width: 800px;
+    white-space: nowrap;
+    padding: 4px 0;
+}
+
+header div[name=logo] img
+{
+    height: 32px;
+    margin: 6px 4px 2px 4px;
+    float: left;
+}
+
+header div[name=site_info] h3
+{
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    margin: 0px 0px 0px 4px;
+}
+
+header div[name=site_info] h4
+{
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    margin: 2px 6px 0px 2px;
+    color: #FFDAB9;
+    float: left;
+}
+
+header div[name=site_info] h5
+{
+    color: white;
+    font-weight: normal;
+    margin: 2px 6px 0px 4px;
+    text-shadow: 1px 1px 2px black;
+    float:left;
+}
+
+header div[name=user_info]
+{
+    float: right;
+}
+
+header div[name=user_info] span[name=label]
+{
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    margin: 2px 0px 0px 4px;
+    color: #FFDAB9;
+}
+
+header div[name=user_info] span[name=value]
+{
+    font-size: 16px;
+    font-weight: normal;
+    text-shadow: 1px 1px 2px black;
+    margin: 2px 6px 0px 4px;
+    color: white;
+}
+
+header div[name='logout'] a
+{
+    font-size: 14px;
+    font-weight: normal;
+    text-shadow: 1px 1px 2px black;
+    margin: 6px 6px 0px 4px;
+    color: white;
+    float: right;
+    z-index:10002;
+}
+
+footer
+{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color:#708090;
+    border-top: 2px groove darkgrey;
+    z-index: 10001;
+}
+
+footer div[name=copyright]
+{
+    font-size: 12px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    padding-left: 4px;
+}
+
+footer div[name=desktop-message-center]
+{
+    font-size: 18px;
+    color: lemonchiffon;
+    text-shadow: 1px 1px 2px black;
+    padding-right: 8px;
+}
+
+footer div[name=disclaimer]
+{
+    font-size: 10px;
+    font-style: italic;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    padding-left: 3px;
+}
+
+.version_number
+{
+    font-size: 14px;
+    color: #404040;
+    text-shadow: 1px 1px 2px grey;
+    font-style: italic;
+}
+
+
+/* ------------------------------------------- login.html (login page) --------------------------------------------- */
+section[name=login]
+{
+    margin-top: 100px;
+    padding: 132px 0px 12px 10px;
+}
+
+section[name=login] div[name=container]
+{
+    width: 340px;
+    height: 250px;
+    border: 1px solid grey;
+}
+
+section[name=login] div[name=container] div[name=header]
+{
+    height: 28px;
+    border-bottom: 2px groove darkgrey;
+    background-color: #708090;
+    padding-top: 4px;
+}
+
+section[name=login] div[name=container] div[name=header_contents]
+{
+    width: 140px;
+    font-size: 18px;
+    font-weight: normal;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+section[name=login] div[name=container] div[name=header_contents] img
+{
+    float: left;
+    padding: 3px 5px 0px 0px;
+    height: 18px;
+}
+
+section[name=login] div[name=container] div[name=instructions]
+{
+    font-size: 12px;
+    font-weight: bold;
+    width: 280px;
+    margin: 10px 0px 0px 32px;
+}
+
+section[name=login] div[name=container] div[name=instructions] img
+{
+    height: 16px;
+    padding-right: 4px;
+    margin-top: 4px;
+}
+
+section[name=login] div[name=container] div[name=contents]
+{
+    margin: 12px 0px 0px 32px;
+}
+
+section[name=login] div[name=container] div[name=contents] label
+{
+    width: 84px;
+}
+
+section[name=login] div[name=container] div[name=contents] input
+{
+    width: 150px;
+}
+
+section[name=login] div[name=container] div[name=contents] button
+{
+    margin: 8px 0px 0px 89px;
+    font-size: 14px;
+    height: 30px;
+}
+
+section[name=login] div[name=container] div[name=contents] img
+{
+    width: 14px;
+    height: 14px;
+    right:4px;
+    top: 2px;
+}
+
+section[name=login] div[name=container] div[name=contents] p
+{
+    font-size: 12px;
+    color: red;
+    margin: 8px 0px 0px 20px;
+    text-align: center;
+    width: 250px;
+    border-top: 1px solid red;
+}
+
+/* ---------------------------------------------- side bar --------------------------------------------------------- */
+div[name=side_bar]
+{
+    width: 33px;
+    margin-top: 57px;
+    float: left;
+    border-left: 1px solid dimgray;
+    border-right: 2px inset dimgray;
+    background-color: #444444;
+}
+
+div[name=side_bar] img
+{
+    margin-left: 5px;
+    margin-top: 4px;
+    height: 20px;
+    width: 22px;
+    filter: invert(80%);
+}
+
+div[name=side_bar] img:hover
+{
+    filter: invert(0%);
+}
+
+.side_bar_section_toolbar
+{
+    height: 27px;
+    width: 100%;
+    background-color: #995300;
+}
+
+.side_bar_section_toolbar_img
+{
+    margin: 4px 0px 0px 3px;
+    height: 18px;
+    width: 20px;
+    filter: invert(90%);
+}
+
+.side_bar_section_img
+{
+    width: 14px;
+    height: 14px;
+    margin: 2px 0px 0px 4px;
+}
+
+/* ------------------------------------------ side bar contents ---------------------------------------------------- */
+#site_contents
+{
+    margin-top: 57px;
+    float: left;
+    background-color: whitesmoke;
+}
+
+div[name=side_bar_contents]
+{
+    width: 350px;
+    min-width: 250px;
+    max-width: 750px;
+    margin-top: 57px;
+    float: left;
+    border-right: 2px inset dimgray;
+    background-color: #E7C6A5;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.side_bar_contents_header
+{
+    text-align: left;
+    background-color: #444444;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-top: 1px groove whitesmoke;
+    border-bottom: 1px groove darkgrey;
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px black;
+}
+
+.side_bar_contents_header_img
+{
+    height: 18px;
+    width: 20px;
+    float: left;
+    margin-top: 1px;
+    margin-left: 4px;
+    margin-right: 4px;
+    filter: invert(80%);
+}
+
+div[name=side_bar_contents] div[name=windows_content] a
+{
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    text-shadow: 1px 1px 2px darkgray;
+    font-weight: bold;
+}
+
+div[name=side_bar_contents] div[name=windows_content] a:hover
+{
+    text-decoration: none;
+    font-size: 14px;
+    color: darkred;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* ------------------------------------------------- main menu  ---------------------------------------------------- */
+.menu
+{
+    margin-top: 2px;
+    margin-left: 4px;
+}
+
+.sub_menu
+{
+    margin: 0px 0px 0px 16px;
+}
+
+.menu_header
+{
+    font-weight: normal;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px darkgray;
+}
+
+.menu_item
+{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.menu_spotlight
+{
+    color: darkred;
+    font-weight: bold;
+}
+
+.menu_rotate
+{
+    transform: rotate(90deg);
+}
+
+#menu li:hover
+{
+    cursor:pointer;
+}
+
+#menu a
+{
+    color: #666;
+    text-decoration: none;
+}
+
+#menu a:hover
+{
+    font-weight: bold;
+    font-style: italic;
+    color: DarkRed;
+}
+
+#menu li img
+{
+    padding-left: 3px;
+}
+
+/* --------------------------------------------------- windows ----------------------------------------------------- */
+.window
+{
+    border: 1px solid darkgrey;
+}
+
+.window_title_bar
+{
+    border: 2px solid lightgrey;
+    background-color: #995300;
+    height: 25px;
+    width: 100%;
+    cursor: default;
+}
+
+.window_header
+{
+    font-size: 16px;
+    font-style: normal;
+    border: none;
+    color: whitesmoke;
+    padding: 2px 0px 0px 4px;
+    text-shadow: 1px 1px 2px black;
+}
+
+.window_button
+{
+    height: 20px;
+    width: 24px;
+    background-color: #995300;
+    margin-top: 3px;
+}
+
+.window_helper
+{
+    font-style: italic;
+    font-weight: normal;
+}
+
+.windows_content
+{
+    width:100%;
+}
+
+/* ----------------------------------------------- message handlers ------------------------------------------------ */
+.error_msg
+{
+    margin: 0px 0px 12px 6px;
+}
+
+.error_msg > ul
+{
+    margin: 0px;
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
+}
+
+.error_msg > ul > li
+{
+    margin-left: 24px;
+    font-size: 12px;
+    color: red;
+    font-weight: normal;
+}
+
+.success_msg
+{
+    font-size: 14px;
+    color: green;
+    margin: 0px 0px 6px 0px;
+}
+
+/* ---------------------------------------------- side bar favorites ------------------------------------------------ */
+#side_bar_favorite_contents li:hover
+{
+    cursor:pointer;
+}
+
+div[name=side_bar_contents] div[name=side_bar_favorite_contents] a
+{
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    text-shadow: 1px 1px 2px darkgray;
+    font-weight: bold;
+}
+
+div[name=side_bar_contents] div[name=side_bar_favorite_contents] a:hover
+{
+    text-decoration: none;
+    font-size: 14px;
+    color: darkred;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.module_li
+{
+    margin-left: 2px;
+}
+
+/* -------------------------------------------------- help styles --------------------------------------------------- */
+.help_window
+{
+    left: 0;
+    top: 0;
+    width: 550px;
+    height: 650px;
+    min-width: 550px;
+    min-height: 650px;
+    overflow: hidden;
+    position: absolute;
+    background-color: lemonchiffon;
+}
+
+.help_section_content_header
+{
+    width: auto;
+    padding-right: 8px;
+    padding-left: 8px;
+    background-color: lemonchiffon;
+    max-height: 600px;
+    overflow: auto;
+}
+
+.help_topic_description
+{
+    width: auto;
+    font-size: 14px;
+    background-color: lemonchiffon;
+    margin-bottom: 4px;
+}
+
+.help_instruction_header
+{
+    width: auto;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    margin-top: 6px;
+    background-color: lemonchiffon;
+}
+
+.help_instruction
+{
+    width: auto;
+    font-size: 12px;
+    background-color: lemonchiffon;
+}
+
+.under_maintenance_window
+{
+    left: 0;
+    top: 0;
+    width: 550px;
+    height: 610px;
+    min-width: 550px;
+    min-height: 610px;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+}

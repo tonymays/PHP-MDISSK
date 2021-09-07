@@ -1,0 +1,19 @@
+<div class="menu">
+    <ul id="menu" type="None">
+        {menu}
+        <li class="menu_header">{group}<img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/circle_arrow_right.png';?>" width='15' height='15'/>
+            <ul class="hide" type="None">
+                <div class="sub_menu">
+                    {menu_items}
+                    <li class="menu_item">
+                        <a href="javascript:Core.launch('{url}','Help [{module}] {menu_item}','{css_class}','','{single_instance}','-1','-1','-1','-1','No','-1','-1','-1','-1','-1')">
+                            <span>{menu_item}</span>
+                        </a>
+                    </li>
+                    {/menu_items}
+                </div>
+            </ul>
+        </li>
+        {/menu}
+    </ul>
+</div>

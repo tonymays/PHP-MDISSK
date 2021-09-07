@@ -1,0 +1,31 @@
+{messages}
+<div name="users_content_table" class="users_content_table set_h">
+    <table id="users_table" class="users_table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Work Phone</th>
+            <th>Personal Phone</th>
+            <th>Email Address</th>
+            <th>System User</th>
+            <th>Account Active</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {rows}
+        <tr>
+            <td>{full_name}</td>
+            <td>{role}</td>
+            <td>{work_phone}</td>
+            <td>{personal_phone}</td>
+            <td>{email_address}</td>
+            <td>{system_user}</td>
+            <td>{active}</td>
+            <td>{actions}</td>
+        </tr>
+        {/rows}
+        </tbody>
+    </table>
+</div>

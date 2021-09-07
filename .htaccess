@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /mdissk/
+RewriteRule ^index.php/(.*)$ /$1 [R=302,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|assets/styles|assets/images|assets/scripts|robots\.txt)
+RewriteRule ^(.*)$ index.php?/$1 [L]

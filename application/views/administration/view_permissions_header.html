@@ -1,0 +1,28 @@
+<script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/administration/permissions.js';?>"></script>
+<script type = "text/javascript">
+    PermissionsObj = new JPermissions(Ajax);
+</script>
+{toolbar}
+<section name="permissions_section" class="section clearfix">
+    <div class="section_content_header get_h">
+        <h2><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/keys.png';?>" class="section_img">Permissions</h2>
+    </div>
+    <div class="section_header_spacer get_h">
+        <h3 class="section_header">Role Selection</h3>
+    </div>
+    <form id="permissions_form">
+        <div name="permissions_content_header" class="audit_page copy_audit_mirror">
+            <div class="get_h">
+                <h5>*Select the role you wish to view or modify from the Roles Drop Down</h5>
+                <label class="x_small_width">Roles</label>{roles}<br>
+                <br>
+            </div>
+            <div name="permissions_content" class="permissions_content set_h">
+                {content}
+            </div>
+        </div>
+    </form>
+</section>
+<script type = "text/javascript">
+    PermissionsObj.initialize();
+</script>

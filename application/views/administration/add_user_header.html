@@ -1,0 +1,22 @@
+<script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/administration/users.js';?>"></script>
+<script type = "text/javascript">
+    UsersObj = new JUsers(Ajax, Core, 'add_user_form');
+    $(document).ready(function()
+    {
+        $('input[name=user_name]').focus();
+    });
+</script>
+{toolbar}
+<section name="add_users_section" class="section clearfix">
+    <form id="add_user_form">
+        <div class="section_content_header get_h">
+            <h2><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/user.png';?>" class="section_img">Add User</h2>
+        </div>
+        <div name="add_user_content" class="add_user_content set_h audit_page">
+            {content}
+        </div>
+    </form>
+</section>
+<script type = "text/javascript">
+    UsersObj.initialize();
+</script>

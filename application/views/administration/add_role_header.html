@@ -1,0 +1,22 @@
+<script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/administration/roles.js';?>"></script>
+<script type = "text/javascript">
+    RolesObj = new JRoles(Ajax, Core, 'add_role_form');
+    $(document).ready(function()
+    {
+        $('input[name=role]').focus();
+    });
+</script>
+{toolbar}
+<section name="add_roles_section" class="section clearfix">
+    <form id="add_role_form">
+        <div class="section_content_header get_h">
+            <h2><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/keys.png';?>" class="section_img">Add Role</h2>
+        </div>
+        <div name="add_roles_content" class="set_h audit_page">
+            {content}
+        </div>
+    </form>
+</section>
+<script type = "text/javascript">
+    RolesObj.initialize();
+</script>

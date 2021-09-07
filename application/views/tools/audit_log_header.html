@@ -1,0 +1,53 @@
+<script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/tools/audit.js';?>"></script>
+<script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/administration/users.js';?>"></script>
+<script type = "text/javascript">
+    AuditObj = new JAudit(Ajax, Core, '');
+    UsersObj = new JUsers(Ajax, Core, '');
+    $(document).ready(function()
+    {
+        $('select[name=users]').focus();
+    });
+</script>
+{toolbar}
+<section name="audit_log_section" class="section clearfix">
+    <form id="audit_log_form">
+        <div class="section_content_header get_h">
+            <h2><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/adjust.png';?>" class="section_img">Audit Log</h2>
+        </div>
+        <div class="section_header_spacer get_h">
+            <h3 class="section_header">Report Filters</h3>
+        </div>
+        <div class="get_h">
+            <label class="small_width">Users</label>{users}<br>
+            <label class="small_width">Modules</label>{modules}<br>
+            <label class="small_width">Start Date</label><input type="text" id="start_date" value="All"><span class="input_info">Format: mm/dd/yyyy</span><br>
+            <label class="small_width">End Date</label><input type="text" id="end_date" value="All"><span class="input_info">Format: mm/dd/yyyy</span><br>
+            <br>
+        </div>
+        <div class="section_header_spacer get_h">
+            <h3 class="section_header">Log</h3>
+        </div>
+        {content}
+    </form>
+</section>
+<script type = "text/javascript">
+    AuditObj.initialize();
+    UsersObj.initialize();
+    $(function()
+    {
+        $( "#start_date" ).datepicker(
+        {
+            showOn: "button",
+            buttonImage: "/mdissk/assets/images/calendar.png",
+            buttonImageOnly: true,
+            buttonText: "Select date"
+        });
+        $( "#end_date" ).datepicker(
+        {
+            showOn: "button",
+            buttonImage: "/mdissk/assets/images/calendar.png",
+            buttonImageOnly: true,
+            buttonText: "Select date"
+        });
+    });
+</script>

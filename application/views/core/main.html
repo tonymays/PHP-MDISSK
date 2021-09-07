@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Synercloud</title>
+    <script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/jquery/jquery-1.11.3.min.js';?>"></script>
+    <script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/jquery-ui/jquery-ui.min.js';?>"></script>
+    <link type="text/css" rel="stylesheet" href="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/jquery-ui/jquery-ui.min.css';?>">
+    <link type="text/css" rel="stylesheet" href="<?php echo '/' . SITE_SESSION_NAME . '/assets/styles/core.css';?>">
+    <link type="text/css" rel="stylesheet" href="<?php echo '/' . SITE_SESSION_NAME . '/assets/styles/forms.css';?>">
+    <script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/core/ajax.js';?>"></script>
+    <script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/core/core.js';?>"></script>
+    <script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/core/menu.js';?>"></script>
+    <!--
+    Start Kit Notes: Multi-Instance submodules javascript libraries must be loaded here in order to prevent multiple
+    copies of those libraries from being loaded.  If multiple copies are loaded then multiple executions will occur
+    if they are are loaded inline.  To prevent that they must be loaded at the top of the site ie. here.
+    -->
+    <script type = "text/javascript">
+        Ajax = new JAjax();
+        Core = new JCore(Ajax);
+        Menu = new JMenu();
+        $(document).ready(function()
+        {
+            var window_height = $(window).outerHeight();
+            var header_height = $("header").outerHeight();
+            var footer_height = $("footer").outerHeight();
+            var window_width = $(window).outerWidth();
+            var side_bar_contents_width = $("div[name=side_bar_contents]").outerWidth();
+            var side_bar_width = $("div[name=side_bar]").outerWidth();
+            var body_height = window_height - header_height - footer_height;
+            var body_width = window_width - side_bar_contents_width - side_bar_width - 4;
+
+            $("div[name=side_bar]").css
+            (
+                {
+                    height: body_height + 'px'
+                }
+            );
+
+            $("div[name=side_bar_contents]").css
+            (
+                {
+                    height: body_height + 'px'
+                }
+            );
+
+            $("div[name=site_contents]").css
+            (
+                {
+                    height: body_height + 'px',
+                    width: body_width + 'px'
+                }
+            );
+
+            if (Core.has_desktop())
+            {
+                Core.load_desktop();
+            }
+        });
+        $(window).resize(function()
+        {
+            var window_height = $(window).outerHeight();
+            var header_height = $("header").outerHeight();
+            var footer_height = $("footer").outerHeight();
+            var window_width = $(window).outerWidth();
+            var side_bar_contents_width = $("div[name=side_bar_contents]").outerWidth();
+            var side_bar_width = $("div[name=side_bar]").outerWidth();
+            var body_height = window_height - header_height - footer_height;
+            var body_width = window_width - side_bar_contents_width - side_bar_width - 4;
+            $("div[name=side_bar]").css
+            (
+                    {
+                        height: body_height + 'px'
+                    }
+            );
+            $("div[name=side_bar_contents]").css
+            (
+                    {
+                        height: body_height + 'px'
+                    }
+            );
+            $("div[name=site_contents]").css
+            (
+                    {
+                        height: body_height + 'px',
+                        width: body_width + 'px'
+                    }
+            );
+        });
+    </script>
+</head>
+<body>
+    {background}
+    <div name="side_bar">
+        <a title="Show Main Menu" href="javascript:Core.show_side_bar_section('main_menu')"><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/home.png';?>"></a>
+        <a title="Show Window Manager" href="javascript:Core.show_side_bar_section('window_manager')"><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/display.png';?>"></a>
+        <a title="Show Favorites" href="javascript:Core.show_side_bar_section('favorites')"><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/heart.png';?>"></a>
+        <a title="Save Desktop" href="javascript:Core.save_desktop()"><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/cloud_upload.png';?>"></a>
+        <a title="Load Desktop" href="javascript:Core.load_desktop()"><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/cloud_download.png';?>"></a>
+        <a title="Toggle Side Bar" href="javascript:Core.show_side_bar_section('toggle_side_bar')"><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/collapse.png';?>"></a>
+        <a title="Show Help Menu" href="javascript:Core.show_side_bar_section('help_menu')"><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/circle_question_mark.png';?>"></a>
+    </div>
+    <div name="side_bar_contents">
+        <div name="side_bar_main_menu">
+            <div class="side_bar_contents_header">
+                <img class="side_bar_contents_header_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/home.png';?>">
+                <h3>Main Menu</h3>
+            </div>
+            <div name="side_bar_main_menu_toolbar" class="side_bar_section_toolbar">
+                <a title="Expand Menu" href="javascript:Core.expand_menu('main')"><img class="side_bar_section_toolbar_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/folder_plus.png';?>"></a>
+                <a title="Collapse Menu" href="javascript:Core.collapse_menu('main')"><img class="side_bar_section_toolbar_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/folder_minus.png';?>"></a>
+            </div>
+            {site_menu}
+        </div>
+        <div name="side_bar_windows_manager" class="hide">
+            <div class="side_bar_contents_header">
+                <img class="side_bar_contents_header_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/display.png';?>">
+                <h3>Window Manager</h3>
+            </div>
+            <div name="side_bar_menu_toolbar" class="side_bar_section_toolbar">
+                <a title="Show All" href="javascript:Core.display_windows()"><img class="side_bar_section_toolbar_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/new_window.png';?>"></a>
+                <a title="Minimize All" href="javascript:Core.minimize_windows()"><img class="side_bar_section_toolbar_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/circle_minus.png';?>"></a>
+                <a title="Close All" href="javascript:Core.close_windows()"><img class="side_bar_section_toolbar_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/circle_remove.png';?>"></a>
+            </div>
+            <div class="windows_content">
+                <div name="windows_content"></div>
+            </div>
+        </div>
+        <div name="side_bar_favorites" class="hide">
+            <div class="side_bar_contents_header">
+                <img class="side_bar_contents_header_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/heart.png';?>">
+                <h3>Favorites</h3>
+            </div>
+            <div name="side_bar_menu_toolbar" class="side_bar_section_toolbar">
+                <a title="Open All" href="javascript:Core.load_favorites()"><img class="side_bar_section_toolbar_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/new_window.png';?>"></a>
+                <a title="Delete All" href="javascript:Core.delete_favorites()"><img class="side_bar_section_toolbar_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/circle_remove.png';?>"></a>
+            </div>
+            <div name="side_bar_favorite_contents">
+                {site_favorites}
+            </div>
+        </div>
+        <div name="side_bar_help_menu" class="hide">
+            <div class="side_bar_contents_header">
+                <img class="side_bar_contents_header_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/circle_question_mark.png';?>">
+                <h3>Help Menu</h3>
+            </div>
+            <div name="side_bar_menu_toolbar" class="side_bar_section_toolbar">
+                <a title="Expand Menu" href="javascript:Core.expand_menu('help')"><img class="side_bar_section_toolbar_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/folder_plus.png';?>"></a>
+                <a title="Collapse Menu" href="javascript:Core.collapse_menu('help')"><img class="side_bar_section_toolbar_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/folder_minus.png';?>"></a>
+            </div>
+            {site_help_menu}
+        </div>
+    </div>
+    <div id="site_contents" name="site_contents" class="window_parent">
+        <div style="width:600px;margin:0 auto;margin-top:300px;">
+            <span style="font-size:48px;color:darkgrey;text-align:center;">
+                 <img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/global.png';?>" style="width:32px;height:32px;margin-right:4px;">SkyNet is breathing...
+            </span>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+</body>
+<script type = "text/javascript">
+    Menu.initialize();
+    Core.initialize();
+</script>
+</html>

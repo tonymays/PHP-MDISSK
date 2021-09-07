@@ -1,0 +1,25 @@
+<div name="audit_log_content">
+    {rows}
+    <div name="audit_log_content_table"  class="audit_log_content_table set_h">
+        <table class="audit_log_table">
+            <thead>
+            <tr>
+                <th class="large_width">User Name</th>
+                <th class="xxx_large_width">Module</th>
+                <th class="large_width">Trx Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            {log}
+            <tr>
+                <td>{user_name}</td>
+                <td>{module}</td>
+                <td>{trx_date}</td>
+            </tr>
+            {/log}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    {/rows}
+</div>

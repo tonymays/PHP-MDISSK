@@ -1,0 +1,27 @@
+<script src="<?php echo '/' . SITE_SESSION_NAME . '/assets/scripts/tools/audit.js';?>"></script>
+<script type = "text/javascript">
+    AuditObj = new JAudit(Ajax, Core, 'audit_diff_form');
+    $(document).ready(function()
+    {
+    });
+</script>
+<section name="audit_diff_section" class="section clearfix">
+    <form id="audit_diff_form">
+        <div name="audit_diff_page_header" class="section_content_header get_h get_w">
+            <h2><img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/adjust.png';?>" class="section_img">Audit Log Diff - Changes Made By {user_name}</h2>
+        </div>
+
+        <div name="audit_log_diff_before_parent" class="audit_log_diff_parent_pane">
+            <div name="audit_log_old_diff_title_bar" class="audit_log_diff_title_bar get_h">Before {trx_date}</div>
+            <div name="audit_log_diff_old" class="audit_log_diff_pane set_h get_sibling_w">{old}</div>
+        </div>
+
+        <div name="audit_log_diff_after_parent" class="audit_log_diff_parent_pane set_w">
+            <div name="audit_log_new_diff_title_bar" class="audit_log_diff_title_bar get_h">On {trx_date}</div>
+            <div name="audit_log_diff_new" class="audit_log_diff_pane set_h">{new}</div>
+        </div>
+    </form>
+</section>
+<script type = "text/javascript">
+    AuditObj.initialize();
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Synercloud: Login</title>
+    <link type="text/css" rel="stylesheet" href="<?php echo '/' . SITE_SESSION_NAME . '/assets/styles/core.css';?>">
+</head>
+<body>
+    {background}
+    <section name="login">
+        <form id="login_form" action="<?php echo '/' . SITE_SESSION_NAME . '/core/login';?>" method="post" autocomplete="off"/>
+        <div name="container" class="center">
+            <div name="header" class="center">
+                <div name="header_contents" class="center">
+                    <img src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/keys.png';?>"/>
+                    System Login
+                </div>
+            </div>
+            <div name="instructions">
+                <img src="<?php echo '/' . SITE_SESSION_NAME .'/assets/images/keys.png';?>"/>
+                Please enter your assigned user name and password, and then click the Login button.
+            </div>
+            <div name="contents">
+                <label>Username:</label>
+                <input type="text" name="username" value="<?php echo set_value('username');?>" autofocus><br>
+                <label>Password:</label>
+                <input type="password" name="password" value="">
+                <div name="login_buttons">
+                    <button name="button" type="submit" title="Click to Login">
+                        <img class="login_button_img" src="<?php echo '/' . SITE_SESSION_NAME . '/assets/images/lock.png';?>"/>
+                        Login
+                    </button>
+                </div>
+                {messages}
+            </div>
+        </div>
+        </form>
+    </section>
+</body>
+</html>
